@@ -1,0 +1,50 @@
+<h3>{{viewTitle}}</h3>
+<div class="mb-5">
+    <a href="/employee/list" class="btn btn-secondary btn-sm pull-right"><i class="fa fa-list-alt"></i> View All</a>
+</div>
+<hr/>
+<form action="/employee" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{employee._id}}">
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>First Name</label>
+            <input type="text" class="form-control" name="firstname" placeholder="First Name" value="{{employee.firstname}}">
+            <div class="text-danger">
+                {{employee.firstNameError}}
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="{{employee.lastname}}">
+            <div class="text-danger">
+                {{employee.lastNameError}}
+            </div>
+        </div>  
+    </div>      
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Email" value="{{employee.email}}">
+            <div class="text-danger">
+                {{employee.emailError}}
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Mobile Number</label>
+            <input type="text" class="form-control" name="mobile" placeholder="Mobile Number" value="{{employee.mobile}}">
+            <div class="text-danger">
+                {{employee.mobileError}}
+            </div>
+        </div>
+    </div>    
+    <div class="form-group">
+        <label>Address</label>
+        <textarea name="address" cols="30" rows="3" class="form-control" placeholder="Address">{{employee.address}}</textarea>
+        <div class="text-danger">
+            {{employee.addressError}}
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success"><i class="fa fa-database"> Submit</i></button>
+    </div>
+</form>
